@@ -6,32 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Todos</title>
+    <title>Todo Item</title>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center my-5">Todos Page</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card card-default">
-                    <div class="card-header">
-                        Todos 
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach ($todos as $todo)
-                                <li class="list-group-item">
-                                    {{ $todo->name }}
-
-                                <a href="/todos/{{$todo->id}}" class="btn btn-primary btn-sm float-right">View</a>
-                                </li>   
-                            @endforeach
-                        </div>
-                    </div>
+        <div class="h1 text-center my-5">
+            {{ $todo->name}}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card card-default">
+                <div class="card-header">
+                    Details
+                </div>
+                <div class="card-body">
+                    {{$todo->description}}
                 </div>
             </div>
         </div>
     </div>
+    
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
