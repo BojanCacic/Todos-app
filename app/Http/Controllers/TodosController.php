@@ -17,4 +17,23 @@ class TodosController extends Controller
 
         return view('todos.show')->with('todo', $todo);
     }
+
+    public function create(){
+        return view('todos.create');
+    }
+
+    public function store(){
+        //dd(request()->all());
+        $data = request()->all();
+
+        $todo = new Todo();
+
+        $todo->name = $data['name'];
+        $todo->description = $data['description'];
+        $todo->completed = false;
+
+        $todo->save();
+
+        return redirect('/todos');
+    }
 }
